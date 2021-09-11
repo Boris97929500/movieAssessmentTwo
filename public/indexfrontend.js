@@ -116,7 +116,6 @@ const showDetails = (filmInfo) =>{
 
 document.getElementById('submitButton').addEventListener('click', async (event)=>{
     const data = movieTitle ;
-    const demoData = 'hello world';
 
     // const options = 
     // {
