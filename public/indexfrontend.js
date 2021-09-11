@@ -88,9 +88,8 @@ const movieClicked = async movie =>{
             i: movie.imdbID
         }
     })
-    movieData = response.data.Plot
-    console.log(response.data.Plot)
-    // movieTitle = response.data.Title
+    movieData = response.data
+    // console.log(response.data)
     document.querySelector('#movieStats').innerHTML = showDetails(response.data);
 }
 
@@ -117,7 +116,7 @@ const showDetails = (filmInfo) =>{
 
 document.getElementById('submitButton').addEventListener('click', async (event)=>{
     const data = movieData ;
-
+    console.log(data);
 
     const response = await axios({
         method: 'post',

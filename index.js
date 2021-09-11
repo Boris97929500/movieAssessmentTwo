@@ -29,19 +29,8 @@ app.get('/api',  (req,res)=>{
         if(err){
             res.end();
         }
-        // const title = [];
-        // for( d of data){
-        //     title.push(d.data);
-        // } 
 
-        console.log(data)
         res.render('index', {data});
     })
 
 })
-
-// app.get('/api', (req, res)=>{
-//     let str = ''
-
-//     res.render('index',{str})
-// })

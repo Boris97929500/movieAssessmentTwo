@@ -48,19 +48,6 @@ figure .image img {
 }
 
 /* icon animation */
-/* body {
-  width: 100%;
-  padding: 10% 0;
-  margin: 0;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-  background-color: #589167;
-  color: #f1f8e9;
-  font-size: 1.2em;
-} */
 
 .social {
   display: inline-block;
@@ -130,4 +117,60 @@ figure .image img {
 .codepen:hover polyline,
 .codepen:hover polygon {
   stroke: white;
+}
+
+/* styling buttons */
+.backButton {
+  padding: 1.5rem 2rem;
+  font-weight: bold;
+  background-color: #179be8;
+  color: white;
+}
+#submitButton {
+  margin: 0 1rem 0 0;
+}
+
+.twoButtonStyling {
+  margin: 2rem 0;
+}
+.databaseTitle {
+  margin: 1rem 0 0 0;
+}
+
+.backButton::hover {
+  cursor: pointer;
+}
+
+.backButton::after,
+.backButton::before {
+  position: absolute;
+  content: "";
+  width: 0;
+  height: 0;
+  transition: 0.5s;
+}
+
+.backButton::after {
+  top: -9px;
+  left: -9px;
+  border-top: 3px solid transparent;
+  border-left: 3px solid transparent;
+}
+
+.backButton::before {
+  bottom: -9px;
+  right: -9px;
+  border-bottom: 3px solid transparent;
+  border-right: 3px solid transparent;
+}
+
+.backButton:hover {
+  color: #222222;
+}
+
+.backButton:hover::after,
+.backButton:hover::before {
+  width: calc(100% + 15px);
+  height: calc(100% + 15px);
+  border-color: #222222;
 }
