@@ -29,14 +29,13 @@ app.get('/api',  (req,res)=>{
         if(err){
             res.end();
         }
-        const title = [];
+        // const title = [];
+        // for( d of data){
+        //     title.push(d.data);
+        // } 
 
-        for( d of data){
-            title.push(d.data);
-        } 
-        console.log(title);
-        // const str = '123'
-        res.render('index', {title});
+        console.log(data)
+        res.render('index', {data});
     })
 
 })

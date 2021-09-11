@@ -1,4 +1,5 @@
 let movieTitle = "";
+let movieData = "";
 
 //fetch data
 const fetchData = async (strSearch) => {
@@ -87,9 +88,9 @@ const movieClicked = async movie =>{
             i: movie.imdbID
         }
     })
-    //console log out movie title
-    console.log(response.data.Title)
-    movieTitle = response.data.Title
+    movieData = response.data.Plot
+    console.log(response.data.Plot)
+    // movieTitle = response.data.Title
     document.querySelector('#movieStats').innerHTML = showDetails(response.data);
 }
 
@@ -115,14 +116,9 @@ const showDetails = (filmInfo) =>{
 }
 
 document.getElementById('submitButton').addEventListener('click', async (event)=>{
-    const data = movieTitle ;
+    const data = movieData ;
 
-    // const options = 
-    // {
-    //     method: 'POST',
-    //     headers: {'Content-Type':'application/json'},
-    //     body: JSON.stringify(demoData)
-    // }
+
     const response = await axios({
         method: 'post',
         url: 'http://localhost:3000/api',
