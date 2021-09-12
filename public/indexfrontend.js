@@ -9,7 +9,7 @@ const fetchData = async (strSearch) => {
             s: strSearch
         }
     });
-
+    //data validation
     if(response.data.Error){
         return [];
     }
@@ -40,7 +40,7 @@ const onInput = async event =>{
 
 
     const movies = await fetchData(event.target.value);
-
+    
     if( movies == ''){
         dropdown.classList.remove('is-active');  
         return;      
@@ -98,7 +98,7 @@ const showDetails = (filmInfo) =>{
     <article class="media">
       <figure class="media-left">
         <p class="image">
-          <img src="${filmInfo.Poster}" />
+          <img src="${filmInfo.Poster}" alt="${filmInfo.Title} image"/>
         </p>
       </figure>
       <div class="media-content">
@@ -116,8 +116,11 @@ const showDetails = (filmInfo) =>{
 
 document.getElementById('submitButton').addEventListener('click', async (event)=>{
     const data = movieData ;
-    console.log(data);
-
+    // basic error handling with alert
+    if(data == ""){
+        alert("please select a movie")
+        return;
+    } 
     const response = await axios({
         method: 'post',
         url: 'http://localhost:3000/api',
