@@ -113,7 +113,7 @@ const showDetails = (filmInfo) =>{
 
   `
 }
-
+//submit button event handling
 document.getElementById('submitButton').addEventListener('click', async (event)=>{
     const data = movieData ;
     // basic error handling with alert

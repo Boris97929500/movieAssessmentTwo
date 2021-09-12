@@ -18,12 +18,12 @@ database.loadDatabase();
 app.listen(3000, ()=>{
     console.log('listening on port 3000')
 } )
-
+//saving data to database
 app.post('/api', (req, res) =>{
     const data = req.body
     database.insert(data);
 })
-
+//rendering database info
 app.get('/api',  (req,res)=>{
     database.find({}, (err, data)=>{
         if(err){
@@ -34,7 +34,7 @@ app.get('/api',  (req,res)=>{
     })
 
 })
-
+//going to info page
 app.get('/info', (req, res)=>{
     res.render('info')
 })
