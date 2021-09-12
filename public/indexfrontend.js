@@ -21,8 +21,8 @@ const fetchData = async (strSearch) => {
 const root = document.querySelector('.autofinish');
 
 root.innerHTML =  `
-    <label><b>Search For a Movie</b></label>
-    <input class="input" />
+    <label for ="movieSearch" ><b>Search For a Movie</b></label>
+    <input id="movieSearch" class="input" />
     <div class="dropdown">
     <div class="dropdown-menu">
         <div class="dropdown-content results"></div>
@@ -93,6 +93,7 @@ const movieClicked = async movie =>{
     document.querySelector('#movieStats').innerHTML = showDetails(response.data);
 }
 
+//showing movie details
 const showDetails = (filmInfo) =>{
     return `
     <article class="media">
@@ -128,5 +129,4 @@ document.getElementById('submitButton').addEventListener('click', async (event)=
             data
         }
     })
-
 })
