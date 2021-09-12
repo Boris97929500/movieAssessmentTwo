@@ -34,3 +34,7 @@ app.get('/api',  (req,res)=>{
     })
 
 })
+
+app.get('/info', (req, res)=>{
+    res.render('info')
+})
