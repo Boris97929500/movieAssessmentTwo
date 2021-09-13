@@ -1,11 +1,11 @@
 let movieTitle = "";
 let movieData = "";
-
+const API_KEY = '2770e2df';
 //fetch data
 const fetchData = async (strSearch) => {
     const response = await axios.get('http://www.omdbapi.com', {
         params: {
-            apikey: '2770e2df',
+            apikey: API_KEY,
             s: strSearch
         }
     });
