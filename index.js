@@ -26,7 +26,9 @@ app.post('/api', (req, res) =>{
 //rendering database info
 app.get('/api',  (req,res)=>{
     database.find({}, (err, data)=>{
+        //server error handling added
         if(err){
+            res.status(500).send("no data found")
             res.end();
         }
 
